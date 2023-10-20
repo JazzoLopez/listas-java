@@ -12,39 +12,37 @@ import javax.swing.JOptionPane;
 public class ListaEnlazada {
 
     public static void main(String[] args) {
-        
+
         lista lsl = new lista();
-        
-      
+
         int op, e;
-        do{
-        op=Integer.parseInt(JOptionPane.showInputDialog("selecciona \n 1. Agregar al inicio \n 2. Agregar al final \n 3. Mostrar \n 4.Salir"));
-        
-        switch(op){
-            case 1:
-               e = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dato"));
-               lsl.insertarInicio(e);
-            break;
-            case 2:
-            e = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dato"));
-               lsl.insertarFinal(e);
-            break;
-            
-            case 3:
-                lsl.inprimirLista();
+        do {
+            op = Integer.parseInt(JOptionPane.showInputDialog(
+                    "selecciona \n 1. Agregar al inicio \n 2. Agregar al final \n 3. Mostrar \n 4.Salir"));
 
-              break;
-            case 4:
-                
-            JOptionPane.showMessageDialog( null, "Nos vemos pronto","Adios",2   );
-            break;
+            switch (op) {
+                case 1:
+                    e = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dato"));
+                    lsl.insertarInicio(e);
+                    break;
+                case 2:
+                    e = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el dato"));
+                    lsl.insertarFinal(e);
+                    break;
 
-            
-            default:
-                
-                break;
-        }
-        }
-        while(op !=4);
+                case 3:
+                    lsl.inprimirLista();
+
+                    break;
+                case 4:
+
+                    JOptionPane.showMessageDialog(null, "Nos vemos pronto", "Adios", 2);
+                    break;
+
+                default:
+
+                    break;
+            }
+        } while (op != 4);
     }
 }
