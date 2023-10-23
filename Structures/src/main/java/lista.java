@@ -1,66 +1,48 @@
-
-/*
-Jazzi
- */
 public class lista {
 
-    protected nodo inicio, fin; //Solo dentro del mismo paquete
+    protected nodo inicio, fin; // Solo dentro del mismo paquete
 
     public lista() {
-        inicio = null; //*Apuntan a  null */
-        fin = null; //*Apunta a null */
+        inicio = null; //* Apuntan a null */
+        fin = null; //* Apunta a null */
     }
 
     public boolean vacia() {
-        if (inicio == null) //*si apunta a null es verdadero */
-            return true;
-         else 
-            return false;
-        
-
+        return inicio == null; // Si apunta a null, la lista está vacía
     }
 
     public void insertarInicio(int e) {
-        inicio = new nodo (e, inicio);  //*Entonnces insertamos en el inicio, creamos el objeto inicio */
-        if (fin == null) { //*Si fin es null, fin ahora es inicio */
+        inicio = new nodo(e, inicio); // Insertar al inicio, crear el objeto inicio
+        if (fin == null) {
             fin = inicio;
         }
-        
-        
-
     }
 
-    public boolean listaVacia(){
-        if(inicio == null){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
-
-    public void insertarFinal(int e){
-        if (!listaVacia()){
+    public void insertarFinal(int e) {
+        if (!vacia()) {
             fin.direccion = new nodo(e);
-            
+        } else {
+            inicio = fin = new nodo(e);
         }
-        else{
-            inicio = fin = new nodo (e);
+    } 
+
+    public void eliminarInicioSiCoincide() {
+        if (!vacia() && inicio.dato == inicio.dato) {
+            inicio = inicio.direccion;
+            if (inicio == null) {
+                fin = null;
+            }
         }
     }
-     public void inprimirLista(){ 
-            nodo recorrido = inicio; //*Creamos un nodo y le asignamos el valor de inicio */
-            System.out.println(" ");  
-            System.out.flush(); 
-           
-            while (recorrido != null){ //*;Mientras el recorrido no sea null imprimimos lo que contenga */
-                
-            System.out.print(" [ "+recorrido.dato+" ] -->");
-                recorrido = recorrido.direccion;
-                
-            }
-            
+
+    public void inprimirLista() {
+        nodo recorrido = inicio;
+        System.out.println(" ");
+        System.out.flush();
+
+        while (recorrido != null) {
+            System.out.print(" [ " + recorrido.dato + " ] -->");
+            recorrido = recorrido.direccion;
         }
-     
+    }
 }
