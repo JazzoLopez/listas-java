@@ -1,3 +1,5 @@
+import javax.swing.JOptionPane;
+
 class Nodo{
     int dni;
     String name, lastname;
@@ -36,9 +38,27 @@ public class Lista {
     public void imprimirLista(){
         Nodo recorrido = inicio;
         while (recorrido != null){
-            System.out.print(recorrido.dni +"\n"+ recorrido.name + "\n" + recorrido.lastname + "-->");
+            System.out.print(recorrido.dni +"  |  "+ recorrido.name + "  |  " + recorrido.lastname + "  -->  ");
             recorrido = recorrido.direccion;
         }
+    }
+    public void encontrarElemento(int dni) {
+        Nodo recorrido = inicio;
+        int contador = 1;
+        while (recorrido != null) {
+            if (recorrido.dni == dni) {
+               
+                JOptionPane.showMessageDialog(null, "Los datos del dni "+ recorrido.dni+" Son: \n"+"DNI: "+recorrido.dni +"\n"+"Nombre: "+recorrido.name +"\n"+"Apellidos: "+ recorrido.lastname+"\nSu posicion en la lista enlazada es: "+contador,"Datos",3);
+                break;
+            } else {
+                contador++;
+                recorrido = recorrido.direccion;
+            }
+        }
+        if (recorrido == null) {
+            JOptionPane.showMessageDialog(null, "El usuario no existe","Error",2);
+        }
+
     }
     
 }

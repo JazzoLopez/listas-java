@@ -1,5 +1,4 @@
 public class Nodo {
-    private int dato;
     public int dni;
     public String name;
     public String lastname;
