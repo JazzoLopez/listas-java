@@ -16,3 +16,18 @@
 - La ultima referencia del ultimo nodo apunta al primer nodo. Y cada uno de los nodos tiene una referencia al
 nodo anterior y al siguiente.
 
+## Si deseas clonar este repositorio:
+  
+   ```cmd
+  git clone https://github.com/usuario/tu-repositorio.git
+```
+  ## Tecnologias utilizadas
+<p align="center">
+    <img src="https://skillicons.dev/icons?i=java,eclipse"/>
+  <br>
+<br>
+
+  <br>
+  <img src="https://img.shields.io/badge/STATUS-Finalizado-green"/>
+ 
+</p>
